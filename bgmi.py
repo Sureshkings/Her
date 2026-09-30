@@ -2,7 +2,7 @@
 
 import telebot
 import subprocess
-import datetime
+from datetime import datetime
 import os
 import logging
 import threading
