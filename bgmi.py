@@ -443,6 +443,8 @@ if __name__ == "__main__":
     print("Telegram bot polling...")
     
     try:
-        bot.infinity_polling()
-    except KeyboardInterrupt:
-        print("\n❌ Bot stopped")
+    bot.infinity_polling(timeout=20, long_polling_timeout=15, logger_level=None)
+except KeyboardInterrupt:
+    print("\n❌ Bot stopped")
+except Exception as e:
+    print(f"Fatal Error: {e}")
