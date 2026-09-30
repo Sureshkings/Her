@@ -10,12 +10,24 @@ import socket
 import time
 import sys
 from collections import defaultdict
+from flask import Flask
 
 BOT_TOKEN = "6432253106:AAFkWdepLLp6kqbziMe9bvun8tmKwUHP6_U"
 ADMIN_ID = 5698149811
 MAX_DURATION = 300
 THREAD_COUNT = 32
 PACKET_SIZE = 2048
+web_app = Flask(__name__)
+
+@web_app.route('/')
+def home():
+    return "Bot is alive!"
+
+def keep_alive():
+    port = int(os.environ.get("PORT", 8080))
+    web_app.run(host="0.0.0.0", port=port)
+
+threading.Thread(target=keep_alive, daemon=True).start()
 
 bot = telebot.TeleBot(BOT_TOKEN)
 active_attacks = {}
