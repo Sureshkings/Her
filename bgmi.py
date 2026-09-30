@@ -11,7 +11,7 @@ import time
 import sys
 from collections import defaultdict
 
-BOT_TOKEN = "6432253106:AAGJZRrZ9lhmJA_jwMQd0kpkbdNTvr-KxpM"
+BOT_TOKEN = "6432253106:AAFkWdepLLp6kqbziMe9bvun8tmKwUHP6_U"
 ADMIN_ID = 5698149811
 MAX_DURATION = 300
 THREAD_COUNT = 32
@@ -442,9 +442,21 @@ if __name__ == "__main__":
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
     print("Telegram bot polling...")
     
+    import logging
+import time
+
+# Polling setup
+while True:
     try:
-    bot.infinity_polling(timeout=20, long_polling_timeout=15, logger_level=None)
-except KeyboardInterrupt:
-    print("\n❌ Bot stopped")
-except Exception as e:
-    print(f"Fatal Error: {e}")
+        print("Telegram bot polling...")
+        bot.infinity_polling(
+            timeout=20, 
+            long_polling_timeout=15, 
+            logger_level=logging.ERROR
+        )
+    except KeyboardInterrupt:
+        print("\n❌ Bot stopped manually")
+        break
+    except Exception as e:
+        print(f"Fatal Error: {e}")
+        time.sleep(5)  # 5 second wait karke restart karega
