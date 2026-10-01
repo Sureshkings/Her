@@ -1,3 +1,4 @@
+import random
 #!/usr/bin/python3
 
 import telebot
@@ -12,7 +13,7 @@ import sys
 from collections import defaultdict
 from flask import Flask
 
-BOT_TOKEN = "6432253106:AAFkWdepLLp6kqbziMe9bvun8tmKwUHP6_U"
+BOT_TOKEN = "6432253106:AAHhg5Godrrk4IVGn04fXk08zcoGnSVQvZM"
 ADMIN_ID = 5698149811
 MAX_DURATION = 300
 THREAD_COUNT = 32
