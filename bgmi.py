@@ -10,8 +10,9 @@ import socket
 import time
 import sys
 from collections import defaultdict
+from flask import flask
 
-BOT_TOKEN = "7240893069:AAHcsoaRU0Yw7peYBfy1zqEL2BnUrZnycWc"
+BOT_TOKEN = "7240893069:AAFs4gR8vZkscIw45I6l43zKzHmiq1tJY2w"
 ADMIN_ID = 5698149811
 MAX_DURATION = 300
 THREAD_COUNT = 32
