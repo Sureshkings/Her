@@ -1,34 +1,21 @@
-import random
 #!/usr/bin/python3
 
 import telebot
 import subprocess
-from datetime import datetime
+import datetime
 import os
 import logging
 import threading
 import socket
 import time
 import sys
-from collections import defaultdict
-from flask import Flask
 
-BOT_TOKEN = "6432253106:AAHhg5Godrrk4IVGn04fXk08zcoGnSVQvZM"
+
+BOT_TOKEN = "6432253106:AAGJZRrZ9lhmJA_jwMQd0kpkbdNTvr-KxpM"
 ADMIN_ID = 5698149811
 MAX_DURATION = 300
 THREAD_COUNT = 32
 PACKET_SIZE = 2048
-web_app = Flask(__name__)
-
-@web_app.route('/')
-def home():
-    return "Bot is alive!"
-
-def keep_alive():
-    port = int(os.environ.get("PORT", 8080))
-    web_app.run(host="0.0.0.0", port=port)
-
-threading.Thread(target=keep_alive, daemon=True).start()
 
 bot = telebot.TeleBot(BOT_TOKEN)
 active_attacks = {}
@@ -455,21 +442,7 @@ if __name__ == "__main__":
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
     print("Telegram bot polling...")
     
-    import logging
-import time
-
-# Polling setup
-while True:
     try:
-        print("Telegram bot polling...")
-        bot.infinity_polling(
-            timeout=20, 
-            long_polling_timeout=15, 
-            logger_level=logging.ERROR
-        )
+        bot.infinity_polling()
     except KeyboardInterrupt:
-        print("\n❌ Bot stopped manually")
-        break
-    except Exception as e:
-        print(f"Fatal Error: {e}")
-        time.sleep(5)  # 5 second wait karke restart karega
+        print("\n❌ Bot stopped")
