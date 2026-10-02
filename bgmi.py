@@ -11,7 +11,7 @@ import time
 import sys
 from collections import defaultdict
 
-BOT_TOKEN = "7240893069:AAHjWnn3iMTPl2YYS85FKp2XjW5vJB0Yxh0"
+BOT_TOKEN = "7240893069:AAHcsoaRU0Yw7peYBfy1zqEL2BnUrZnycWc"
 ADMIN_ID = 5698149811
 MAX_DURATION = 300
 THREAD_COUNT = 32
