@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-
+import random
 import telebot
 import subprocess
-import datetime
+from datetime import datetime
 import os
 import logging
 import threading
